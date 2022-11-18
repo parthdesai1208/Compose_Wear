@@ -12,6 +12,7 @@ import androidx.wear.compose.material.*
 import com.example.composewear.theme.ComposeWearTheme
 import com.example.composewear.utils.AllWatch
 import com.example.composewear.view.uiComponents.ButtonCompose
+import com.example.composewear.view.uiComponents.TextCompose
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +55,7 @@ fun WearApp() {
                 state = listState
             ) {
                 item { ButtonCompose(contentModifier,iconModifier) }
-
+                item { TextCompose(contentModifier) }
 
             }
         }
