@@ -12,11 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Devices
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import com.example.composewear.theme.ComposeWearTheme
+import com.example.composewear.utils.AllWatch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,8 +54,9 @@ fun Greeting(greetingName: String) {
     )
 }
 
-@Preview(device = Devices.WEAR_OS_SMALL_ROUND, showSystemUi = true, showBackground = true)
+
+@AllWatch
 @Composable
-fun DefaultPreview() {
+fun AllWatch() {
     WearApp("Preview Android")
 }
