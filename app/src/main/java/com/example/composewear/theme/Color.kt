@@ -1,4 +1,4 @@
-package com.example.composewear.presentation.theme
+package com.example.composewear.theme
 
 import androidx.compose.ui.graphics.Color
 import androidx.wear.compose.material.Colors
