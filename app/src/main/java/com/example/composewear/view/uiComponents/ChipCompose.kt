@@ -3,14 +3,14 @@ package com.example.composewear.view.uiComponents
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.SelfImprovement
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.wear.compose.material.Chip
-import androidx.wear.compose.material.Icon
-import androidx.wear.compose.material.Text
+import androidx.wear.compose.material.*
 import com.example.composewear.theme.ComposeWearTheme
 import com.example.composewear.utils.AllWatch
 
@@ -39,7 +39,7 @@ fun ChipCompose(
     )
 }
 
-@AllWatch
+//@AllWatch
 @Composable
 fun ChipComposePreview() {
     ComposeWearTheme {
@@ -51,6 +51,46 @@ fun ChipComposePreview() {
             iconModifier = Modifier
                 .size(24.dp)
                 .wrapContentSize(align = Alignment.Center)
+        )
+    }
+}
+
+@Composable
+fun ToggleChipCompose(modifier: Modifier = Modifier) {
+    var checked by remember { mutableStateOf(true) }
+    ToggleChip(
+        modifier = modifier,
+        checked = checked,
+        toggleControl = {
+            Switch(
+                checked = checked,
+                modifier = Modifier.semantics {
+                    this.contentDescription = if (checked) "On" else "Off"
+                }
+            )
+        },
+        onCheckedChange = {
+            checked = it
+        },
+        label = {
+            Text(
+                text = "Sound",
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
+        }
+    )
+}
+
+@AllWatch
+@Composable
+fun ToggleChipComposePreview() {
+    ComposeWearTheme {
+        ToggleChipCompose(
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentHeight()
+                .padding(all = 8.dp)
         )
     }
 }

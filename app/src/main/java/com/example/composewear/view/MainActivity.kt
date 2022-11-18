@@ -11,10 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.wear.compose.material.*
 import com.example.composewear.theme.ComposeWearTheme
 import com.example.composewear.utils.AllWatch
-import com.example.composewear.view.uiComponents.AppCardCompose
-import com.example.composewear.view.uiComponents.ButtonCompose
-import com.example.composewear.view.uiComponents.ChipCompose
-import com.example.composewear.view.uiComponents.TextCompose
+import com.example.composewear.view.uiComponents.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,6 +57,7 @@ fun WearApp() {
                 item { TextCompose(contentModifier) }
                 item { AppCardCompose(contentModifier,iconModifier) }
                 item { ChipCompose(contentModifier, iconModifier) }
+                item { ToggleChipCompose(contentModifier) }
             }
         }
 
