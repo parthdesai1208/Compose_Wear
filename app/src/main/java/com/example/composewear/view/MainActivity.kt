@@ -13,6 +13,7 @@ import com.example.composewear.theme.ComposeWearTheme
 import com.example.composewear.utils.AllWatch
 import com.example.composewear.view.uiComponents.AppCardCompose
 import com.example.composewear.view.uiComponents.ButtonCompose
+import com.example.composewear.view.uiComponents.ChipCompose
 import com.example.composewear.view.uiComponents.TextCompose
 
 class MainActivity : ComponentActivity() {
@@ -58,6 +59,7 @@ fun WearApp() {
                 item { ButtonCompose(contentModifier,iconModifier) }
                 item { TextCompose(contentModifier) }
                 item { AppCardCompose(contentModifier,iconModifier) }
+                item { ChipCompose(contentModifier, iconModifier) }
             }
         }
 
